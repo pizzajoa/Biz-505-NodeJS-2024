@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = event.target;
     if (target.tagName === "TD") {
       // alert(target.innerText);
-      const parentsTR = target.closest("TR");
-      const tds = parentsTR.querySelectorAll("TD");
-      const st_num = tds[0].innerText;
+      const paTR = target.closest("TR"); // 클릭된 target(TD)를 감싸고 있는 가장 가까운 부모
+      const tds = paTR.querySelectorAll("TD");
+      const st_num = tds[1].innerText;
+      // alert(st_num);
       // href = "/student/" + st_num + "/detail"
       document.location.href = `/student/${st_num}/detail`;
     }
