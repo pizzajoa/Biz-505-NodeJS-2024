@@ -1,0 +1,48 @@
+extends ../layout
+
+block content 
+    link(rel="stylesheet", href="/css/input.css")
+
+    if !STD
+        script(src="/js/input.js")
+
+    h3.book 도서정보 #{STD ? "수정" : "입력"}
+    form.book.input(method="POST")
+        if STD
+            input#isbn(name="isbn", placeholder="ISBN을 입력해 주세요",
+            | value=`${STD ? STD.isbn : ""}`,readonly="readonly")
+        else
+            input#isbn(name="isbn", placeholder="ISBN",
+            | value=`${STD ? STD.isbn : ""}`)
+
+      
+        input#title(name="title",placeholder="도서명",
+        | value=`${STD ? STD.title : ""}`)
+
+        div.book.error.publisher
+        input#publisher(name="publisher",placeholder="출판사",
+        | value=`${STD ? STD.publisher : ""}`)
+
+
+        input#author(name="author",placeholder="저자",
+        | value=`${STD ? STD.author: ""}`)
+        input#st_tel(name="st_tel",placeholder="역자",
+        | value=`${STD ? STD.st_tel : ""}`)
+        input#price(name="price",placeholder="가격",
+        | value=`${STD ? STD.price : ""}`)
+        input#st_addr(name="st_addr",placeholder="할인가",
+        | value=`${STD ? STD.st_addr : ""}`)
+        
+        div.book.error.publisher
+        input#st_addr(name="st_addr",placeholder="발행일",type="datetime-local",
+        | value=`${STD ? STD.st_addr : ""}`)
+        input#st_addr(name="st_addr",placeholder="페이지",
+        | value=`${STD ? STD.st_addr : ""}`)
+        input#st_addr(name="st_addr",placeholder="메모",
+        | value=`${STD ? STD.st_addr : ""}`)
+
+        div.book.error.publisher
+        div.btn
+            button.btn_a(type=`${STD ? "submit" : "button" }`) 저장
+            button.btn_b(type=`${STD ? "submit" : "button" }`) 새로작성
+            button.btn_c(type=`${STD ? "submit" : "button" }`) 리스트보기

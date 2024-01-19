@@ -1,0 +1,72 @@
+.book {
+  width: 80%;
+  margin: 5px auto;
+}
+
+h3.book {
+  padding: 1.1rem;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+form.book.input {
+  border: 1px solid #aaa;
+  padding: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5),
+    0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+form.book.input input {
+  width: 30%;
+  margin: 5px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: #aaa;
+  outline: none;
+}
+form.book.input button {
+  /* input tag 와 button tag 를 세로방향으로 배치하기 위하여 */
+  display: inline-block;
+  justify-content: right;
+  width: 10%;
+  margin: 5px auto;
+  padding: 8px;
+  border-radius: 10px;
+  outline: none;
+}
+
+form.book input {
+  border: 1px solid #eee;
+}
+form.book input:hover {
+  background-color: #eee;
+}
+form.book input:focus {
+  border: 1px solid blue;
+}
+div.btn {
+  justify-content: right;
+}
+button.btn_a {
+  background-color: rgb(65, 65, 202);
+  color: black;
+  justify-content: right;
+}
+button.btn_b {
+  background-color: red;
+  color: black;
+  justify-content: right;
+}
+button.btn_c {
+  background-color: yellow;
+  color: black;
+  justify-content: right;
+}
+
+div.book.error {
+  width: 60%;
+  margin: 0 auto;
+  color: red;
+  font-size: 0.7rem;
+}
