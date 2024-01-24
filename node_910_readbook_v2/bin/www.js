@@ -1,9 +1,9 @@
 /**
  * http Server Setting
  */
-import http from 'http';
-import app from './app.js';
-import createDebug from 'debug';
+import http from "http";
+import app from "./app.js";
+import createDebug from "debug";
 
 // port number check
 const normalizePort = (val) => {
@@ -21,8 +21,7 @@ const normalizePort = (val) => {
   return false;
 };
 
-
-const debug = createDebug('node-910-readbook:server');
+const debug = createDebug("node-910-readbook-v2:server");
 const port = normalizePort(process.env.PORT || "3000");
 
 /**
@@ -31,7 +30,6 @@ const port = normalizePort(process.env.PORT || "3000");
  */
 const server = http.createServer(app);
 
-
 server.listen(port);
 
 // Event listener for HTTP server "error" event.
@@ -39,7 +37,8 @@ server.on("error", (error) => {
   if (error.syscall !== "listen") {
     throw error;
   }
-  const bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+  const bind =
+    typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
