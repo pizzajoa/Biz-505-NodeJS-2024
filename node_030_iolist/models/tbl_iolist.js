@@ -20,10 +20,18 @@ export default class tbl_iolist extends Model {
         io_pcode: {
           type: DataTypes.STRING(6),
           allowNull: false,
+          references: {
+            model: "tbl_products",
+            key: "p_code",
+          },
         },
         io_dcode: {
           type: DataTypes.STRING(5),
           allowNull: false,
+          references: {
+            model: "tbl_depts",
+            key: "d_code",
+          },
         },
         io_div: {
           type: DataTypes.STRING(1),
@@ -52,6 +60,16 @@ export default class tbl_iolist extends Model {
             unique: true,
             using: "BTREE",
             fields: [{ name: "io_seq" }],
+          },
+          {
+            name: "FK_PCODE",
+            using: "BTREE",
+            fields: [{ name: "io_pcode" }],
+          },
+          {
+            name: "FK_DCODE",
+            using: "BTREE",
+            fields: [{ name: "io_dcode" }],
           },
         ],
       }

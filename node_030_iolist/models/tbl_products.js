@@ -1,5 +1,4 @@
 import { Model } from "sequelize";
-
 export default class tbl_products extends Model {
   static init(sequelize, DataTypes) {
     return super.init(

@@ -1,6 +1,5 @@
 import { Model } from "sequelize";
-
-export default class tel_members extends Model {
+export default class tbl_members extends Model {
   static init(sequelize, DataTypes) {
     return super.init(
       {
@@ -13,7 +12,7 @@ export default class tel_members extends Model {
           type: DataTypes.STRING(125),
           allowNull: false,
         },
-        m_raelname: {
+        m_realname: {
           type: DataTypes.STRING(20),
           allowNull: true,
         },
@@ -28,7 +27,7 @@ export default class tel_members extends Model {
       },
       {
         sequelize,
-        tableName: "tel_members",
+        tableName: "tbl_members",
         timestamps: false,
         indexes: [
           {
