@@ -25,6 +25,7 @@ import DB from "../models/index.js";
 import indexRouter from "../routes/index.js";
 import usersRouter from "../routes/users.js";
 import iolistRouter from "../routes/iolist.js";
+import productRouter from "../routes/product.js";
 
 // create express framework
 const app = express();
@@ -56,27 +57,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join("public")));
 
-// session을 사용하기 위한 설정
-// cookieParser()설정 이후에 위치
+// session를 사용하기 위한 설정
+// cookieParser() 설정 이후에 위치
 app.use(
   session({
-    key: "jjh0954", // 식별자, 브라우저에 저장될 쿠키이름
-    secret: "jjh0954@naver.com", //SessionID 암호화용 키
+    key: "callor", // 식별자, 브라우저에 저장될 cookie 이름
+    secret: "callor@callor.com", // SessionID 암호화용 키
     cookie: {
       httpOnly: true,
-      maxAge: 1000 * 60 * 60, //유효시간 1000 *60(1분)
+      maxAge: 1000 * 60 * 60, // 유효시간
     },
   })
 );
-
 // 로그인을 하지 않아도 될 곳(회원인증)
 app.use("/users", usersRouter);
-// 모든 요청 https://localhost:3000/*로 요청한 것들
+
 /**
- * 어떤 특정 요청에 대한 rounting을 실행하는 것이 아니다
- * 모든요청에 대하여 공통으로 어떤 명령을 실행하고 싶을때 사용하는 router 이다
- * 이 router 코드의 끝에는 반드시 next()함수를 실행해 주어야 한다
- * 그렇지 않으면 다른 router들이 전혀 실행되지 않는다
+ * 모든 요청 http://localhost:3000/* 로 요청한 것들
+ * 어떤 특정 요청에 대한 rounting 을 실행하는 것이 아니다
+ * 모든 요청에 대하여 공통으로 어떤 명령을 실행 하고 싶을때
+ * 사용하는 router 이다
+ * 이 router 코드의 끝에는 반드시 next() 함수를 실행해 주어야 한다
+ * 그렇지 않으면 다른 router 들이 전혀 실행되지 않는다
  */
 app.use((req, res, next) => {
   res.locals = req.session;
@@ -86,6 +88,7 @@ app.use((req, res, next) => {
 // router link enable, link connection
 app.use("/", indexRouter);
 app.use("/iolist", iolistRouter);
+app.use("/products", productRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

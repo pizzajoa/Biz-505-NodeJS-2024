@@ -1,10 +1,25 @@
 import express from "express";
+import DB from "../models/index.js";
+const IOLIST = DB.models.tbl_iolist;
+const DEPTS = DB.models.tbl_depts;
+const PRODUCTS = DB.models.tbl_products;
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  return res.render("iolist/list");
+  try {
+    const rows = await IOLIST.findAll({
+      include: [
+        { model: PRODUCTS, as: "IO_상품" },
+        { model: DEPTS, as: "IO_거래처" },
+      ],
+    });
+    // return res.json(rows);
+    return res.render("iolist/list", { IOLIST: rows });
+  } catch (error) {
+    return res.json(error);
+  }
 });
-// 로그인을 해야만 가능 세션정보를 찾아서 없으면 로그인을 하게끔 이동
+
 router.get("/insert", (req, res) => {
   const user = req.session?.user;
   if (user) {
