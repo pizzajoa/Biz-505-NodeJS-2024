@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    form(method="POST")
+        fieldset 
+            legend 상품판매
+            div.input
+                input(type="text",placeholder="상품코드")
+            div
+                input(type="text",placeholder="상품이름")
+            div
+                input(type="text",placeholder="품목")
+            div
+                input(type="text",placeholder="규격")
+            div
+                input(type="text",placeholder="매입단가")
+            div
+                input(type="text",placeholder="매출단가")
+            div.image
+                img(src="#", alt="#", width="100px")
+            button.btn
+                a(href="#") 수정
+                a(href="#") 삭제
+
+                
