@@ -22,7 +22,7 @@ const normalizePort = (val) => {
 };
 
 
-const debug = createDebug('node-sample:server');
+const debug = createDebug('nodejs-900-memo:server');
 const port = normalizePort(process.env.PORT || "3000");
 
 /**

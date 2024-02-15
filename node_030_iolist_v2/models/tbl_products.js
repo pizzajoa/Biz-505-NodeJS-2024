@@ -33,11 +33,12 @@ export default class tbl_products extends Model {
           type: DataTypes.INTEGER,
           allowNull: true,
         },
+        // 저장할 이미지 이름
         p_image_name: {
           type: DataTypes.STRING(255),
           allowNull: true,
         },
-        // 원본이미지 이름
+        // 원본 이미지 이름
         p_image_origin_name: {
           type: DataTypes.STRING(255),
           allowNull: true,

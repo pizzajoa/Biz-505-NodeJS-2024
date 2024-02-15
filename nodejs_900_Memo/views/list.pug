@@ -12,31 +12,31 @@ block content
 
     table.list.products
         tr
-            th 상품코드
-                span.p_code 
+            th 일련번호
+                span.m_seq 
                     i.arrow
-            th 상품이름
-                span.p_name 
+            th 작성자
+                span.m_author
                     i.arrow
-            th 품목
-                span.p_item
+            th 작성일자
+                span.m_date
                     i.arrow
-            th 규격
-                span.p_std 
+            th 작성시각
+                span.m_time 
                     i.arrow
-            th 매입단가
-                span.p_iprice 
+            th 메모내용
+                span.m_memo 
                     i.arrow
-            th 매출단가
-                span.p_oprice 
+            th 이미지파일
+                span.m_image 
                     i.arrow
 
         each item in PRODUCTS
-            tr(data-pcode=`${item.p_code}`)
-                td= item.p_code 
-                td= item.p_name 
-                td= item.p_item 
-                td= item.p_std
-                td= item.p_iprice
-                td= item.p_oprice
+            tr(data-pcode=`${item.m_seq }`)
+                td= item.m_seq  
+                td= item.m_author 
+                td= item.m_date 
+                td= item.m_time
+                td= item.m_memo
+                td= item.m_image
 

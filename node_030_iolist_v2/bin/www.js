@@ -1,9 +1,9 @@
 /**
  * http Server Setting
  */
-import http from 'http';
-import app from './app.js';
-import createDebug from 'debug';
+import http from "http";
+import app from "./app.js";
+import createDebug from "debug";
 
 // port number check
 const normalizePort = (val) => {
@@ -21,16 +21,14 @@ const normalizePort = (val) => {
   return false;
 };
 
-
-const debug = createDebug('node-030-iolist:server');
-const port = normalizePort(process.env.PORT || "3000");
+const debug = createDebug("node-030-iolist:server");
+const port = normalizePort(process.env.PORT || "3001");
 
 /**
  * Create HTTP server.
  * http and app(express framework) integration
  */
 const server = http.createServer(app);
-
 
 server.listen(port);
 
@@ -39,7 +37,8 @@ server.on("error", (error) => {
   if (error.syscall !== "listen") {
     throw error;
   }
-  const bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+  const bind =
+    typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {

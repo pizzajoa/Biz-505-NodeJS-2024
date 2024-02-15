@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta( name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/main.js")
+  body
+    input.head(type="text" value="오늘은 내 생의 가장 젊은날")
+    div.main
+      input(type="text",value=`${today}`)
+      input(type="text",value=`${time}`)
+      input.btn(type="submit",value="새로작성")
+    div.body
+      img(src="#",width="20px",height="20px",alt="") 
+      input(type="text", value="설산에서 고행을")
+    div 
+      img(src="#",width="20px",height="20px",alt="") 
+      input(type="text", value="없는 사막이다 보이는")
+    div  
+      img(src="#",width="20px",height="20px",alt="") 
+      input(type="text", value="하는 온갖 과실이")
+    div  
+      img(src="#",width="20px",height="20px",alt="") 
+      input(type="text", value="우는 봄날의 천지는 얼마나")
+    div  
+      img(src="#",width="20px",height="20px",alt="") 
+      input(type="text", value="능히 품으며 그들의") 
+    div.right
+      input(type="text", placeholder="제목을 입력하세요")
+    div.right  
+      input(type="text", placeholder="내용을 입력하세요")
+    div.right 
+      img(src="#",width="200px",height="200px",alt="") 
+    div.down
+      a(href="/list.pug") 추가
+    footer CopyRight &copy; callor@callor.com
+
+
+    block content

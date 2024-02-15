@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const TH_ITEMS = {
-    상품코드: "p_code",
-    상품이름: "p_name",
-    품목: "p_item",
-    규격: "p_std",
-    매입단가: "p_iprice",
-    매출단가: "p_oprice",
+    일련번호: "m_seq",
+    작성자: "m_author",
+    작성일자: "m_date",
+    작성시간: "m_time",
+    메모내용: "m_memo",
+    이미지파일: "m_image",
   };
 
   // href : 현재 화면이 열릴때 서버에 요청한 주소창의 값들
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = e.target;
     if (target.tagName === "TD") {
       const tr = target.closest("TR");
-      const p_code = tr.dataset.pcode;
-      document.location.replace(`/products/${p_code}/detail`);
+      const m_seq = tr.dataset.pcode;
+      document.location.replace(`/products/${m_seq}/detail`);
 
       // 현재 click 된 요소가 TH 이거나 TH 의 자손이면
     } else if (target.tagName === "TH" || target.closest("TH")) {

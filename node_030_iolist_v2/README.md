@@ -14,7 +14,7 @@
 npm install -g mysql2
 npm install -g sequelize-auto
 
-sequelize-auto -o "./models" -d edb -h localhost -u root -x 'jjh123' -e mysql -l esm
+sequelize-auto -o "./models" -d edb -h localhost -u root -x '!Biz8080' -e mysql -l esm
 ```
 
 ## 로그인 수행하기
