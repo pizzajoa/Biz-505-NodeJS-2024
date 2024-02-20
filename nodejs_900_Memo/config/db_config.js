@@ -1,8 +1,8 @@
 export default {
   development: {
     username: "root",
-    password: "jjh123",
-    database: "ecountDB",
+    password: "!Biz8080",
+    database: "memodb",
     host: "127.0.0.1",
     dialect: "mysql",
     logging: true,
